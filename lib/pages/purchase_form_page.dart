@@ -473,7 +473,10 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.white,
+                          width: 2,
+                        ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       errorBorder: OutlineInputBorder(
@@ -481,7 +484,10 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       contentPadding: const EdgeInsets.all(16),
