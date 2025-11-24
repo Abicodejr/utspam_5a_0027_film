@@ -209,38 +209,53 @@ class _PurchaseDetailPageState extends State<PurchaseDetailPage> {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    _buildDetailRow('SCHEDULE', _transaction!.schedule),
-                    const SizedBox(height: 16),
-                    _buildDetailRow('BUYER NAME', _transaction!.buyerName),
-                    const SizedBox(height: 16),
-                    _buildDetailRow(
-                      'QUANTITY',
-                      '${_transaction!.quantity} ticket(s)',
-                    ),
-                    const SizedBox(height: 16),
-                    _buildDetailRow(
-                      'PURCHASE DATE',
-                      _transaction!.purchaseDate,
-                    ),
-                    const SizedBox(height: 16),
-                    _buildDetailRow(
-                      'PAYMENT METHOD',
-                      _transaction!.paymentMethod,
-                    ),
-                    if (_transaction!.cardNumber != null) ...[
-                      const SizedBox(height: 16),
-                      _buildDetailRow(
-                        'CARD NUMBER',
-                        _maskCardNumber(_transaction!.cardNumber!),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white24, width: 1),
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white.withOpacity(0.02),
                       ),
-                    ],
-                    const SizedBox(height: 16),
-                    _buildDetailRow(
-                      'STATUS',
-                      _transaction!.status.toUpperCase(),
-                      valueColor: _transaction!.status == 'completed'
-                          ? Colors.white
-                          : Colors.red,
+                      child: Column(
+                        children: [
+                          _buildDetailRow('SCHEDULE', _transaction!.schedule),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildDetailRow(
+                            'BUYER NAME',
+                            _transaction!.buyerName,
+                          ),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildDetailRow(
+                            'QUANTITY',
+                            '${_transaction!.quantity} ticket(s)',
+                          ),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildDetailRow(
+                            'PURCHASE DATE',
+                            _transaction!.purchaseDate,
+                          ),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildDetailRow(
+                            'PAYMENT METHOD',
+                            _transaction!.paymentMethod,
+                          ),
+                          if (_transaction!.cardNumber != null) ...[
+                            const Divider(color: Colors.white24, height: 32),
+                            _buildDetailRow(
+                              'CARD NUMBER',
+                              _maskCardNumber(_transaction!.cardNumber!),
+                            ),
+                          ],
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildDetailRow(
+                            'STATUS',
+                            _transaction!.status.toUpperCase(),
+                            valueColor: _transaction!.status == 'completed'
+                                ? Colors.white
+                                : Colors.red,
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 24),
                     Column(
@@ -341,38 +356,30 @@ class _PurchaseDetailPageState extends State<PurchaseDetailPage> {
   }
 
   Widget _buildDetailRow(String label, String value, {Color? valueColor}) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white24, width: 1),
-        borderRadius: BorderRadius.circular(8),
-        color: Colors.white.withOpacity(0.02),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white70,
-              fontSize: 12,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white70,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+          ),
+        ),
+        Flexible(
+          child: Text(
+            value,
+            style: TextStyle(
+              color: valueColor ?? Colors.white,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
-              letterSpacing: 1.5,
             ),
+            textAlign: TextAlign.right,
           ),
-          Flexible(
-            child: Text(
-              value,
-              style: TextStyle(
-                color: valueColor ?? Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.right,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
