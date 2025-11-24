@@ -257,16 +257,6 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                const Text(
-                  'QUANTITY',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
-                  ),
-                ),
-                const SizedBox(height: 8),
                 TextFormField(
                   controller: _quantityController,
                   keyboardType: TextInputType.number,
@@ -282,6 +272,18 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                     return null;
                   },
                   decoration: InputDecoration(
+                    labelText: 'QUANTITY',
+                    labelStyle: const TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                      letterSpacing: 0.5,
+                    ),
+                    floatingLabelStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.05),
                     border: OutlineInputBorder(
@@ -431,16 +433,6 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                 ),
                 if (_paymentMethod == 'Card') ...[
                   const SizedBox(height: 24),
-                  const Text(
-                    'CARD NUMBER',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
                   TextFormField(
                     controller: _cardNumberController,
                     keyboardType: TextInputType.number,
@@ -458,27 +450,39 @@ class _PurchaseFormPageState extends State<PurchaseFormPage> {
                       return null;
                     },
                     decoration: InputDecoration(
+                      labelText: 'CARD NUMBER',
+                      labelStyle: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                        letterSpacing: 0.5,
+                      ),
+                      floatingLabelStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.05),
-                      border: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white24),
-                        borderRadius: BorderRadius.zero,
+                      border: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white24),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white24),
-                        borderRadius: BorderRadius.zero,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white24),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white, width: 2),
-                        borderRadius: BorderRadius.zero,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white, width: 2),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      errorBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                        borderRadius: BorderRadius.zero,
+                      errorBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.red),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      focusedErrorBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 2),
-                        borderRadius: BorderRadius.zero,
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       contentPadding: const EdgeInsets.all(16),
                       counterText: '',
