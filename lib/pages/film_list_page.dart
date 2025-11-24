@@ -153,6 +153,7 @@ class FilmListPage extends StatelessWidget {
                                     color: Colors.white,
                                     width: 1,
                                   ),
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Text(
                                   schedule,
