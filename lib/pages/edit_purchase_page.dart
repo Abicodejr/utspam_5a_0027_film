@@ -263,6 +263,7 @@ class _EditPurchasePageState extends State<EditPurchasePage> {
                                   : Colors.white24,
                               width: _paymentMethod == 'Cash' ? 2 : 1,
                             ),
+                            borderRadius: BorderRadius.circular(8),
                             color: Colors.white.withOpacity(0.05),
                           ),
                           child: Center(
@@ -298,6 +299,7 @@ class _EditPurchasePageState extends State<EditPurchasePage> {
                                   : Colors.white24,
                               width: _paymentMethod == 'Card' ? 2 : 1,
                             ),
+                            borderRadius: BorderRadius.circular(8),
                             color: Colors.white.withOpacity(0.05),
                           ),
                           child: Center(
