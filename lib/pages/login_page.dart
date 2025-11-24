@@ -106,8 +106,6 @@ class _LoginPageState extends State<LoginPage> {
                       letterSpacing: 2,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Container(width: 100, height: 4, color: Colors.white),
                   const SizedBox(height: 80),
                   _buildTextField(
                     controller: _emailOrUsernameController,

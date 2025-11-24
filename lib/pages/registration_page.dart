@@ -127,8 +127,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       letterSpacing: 2,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Container(width: 100, height: 4, color: Colors.white),
                   const SizedBox(height: 48),
                   _buildTextField(
                     controller: _fullNameController,
