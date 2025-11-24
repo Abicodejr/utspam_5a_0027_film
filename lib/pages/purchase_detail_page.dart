@@ -162,9 +162,11 @@ class _PurchaseDetailPageState extends State<PurchaseDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
+                      width: double.infinity,
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.white24, width: 1),
+                        borderRadius: BorderRadius.circular(8),
                         color: Colors.white.withOpacity(0.02),
                       ),
                       child: Column(
