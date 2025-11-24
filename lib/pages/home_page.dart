@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'film_list_page.dart';
 import 'purchase_history_page.dart';
+import 'profile_page.dart';
 import 'login_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,35 +21,27 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              Row(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(width: 4, height: 60, color: Colors.white),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'HELLO',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                            letterSpacing: 2,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          userName.toUpperCase(),
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
+                  const Text(
+                    'HELLO',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                      letterSpacing: 2,
                     ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    userName.toUpperCase(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
@@ -105,9 +98,10 @@ class HomePage extends StatelessWidget {
                       title: 'PROFILE',
                       subtitle: 'View your account details',
                       onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Profile feature coming soon'),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfilePage(userId: userId),
                           ),
                         );
                       },
