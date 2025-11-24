@@ -58,86 +58,84 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       body: _isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: Colors.white),
-            )
+          ? const Center(child: CircularProgressIndicator(color: Colors.white))
           : _user == null
-              ? const Center(
-                  child: Text(
-                    'User not found',
-                    style: TextStyle(color: Colors.white70),
-                  ),
-                )
-              : SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(
-                          child: Container(
-                            width: 120,
-                            height: 120,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 2),
-                              color: Colors.white.withOpacity(0.05),
-                            ),
-                            child: const Icon(
-                              Icons.person,
-                              size: 60,
-                              color: Colors.white,
-                            ),
-                          ),
+          ? const Center(
+              child: Text(
+                'User not found',
+                style: TextStyle(color: Colors.white70),
+              ),
+            )
+          : SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.white, width: 2),
+                          color: Colors.white.withOpacity(0.05),
                         ),
-                        const SizedBox(height: 24),
-                        Center(
-                          child: Text(
-                            _user!.fullName.toUpperCase(),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
+                        child: const Icon(
+                          Icons.person,
+                          size: 60,
+                          color: Colors.white,
                         ),
-                        const SizedBox(height: 40),
-                        const Text(
-                          'ACCOUNT INFORMATION',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white24, width: 1),
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.white.withOpacity(0.02),
-                          ),
-                          child: Column(
-                            children: [
-                              _buildInfoRow('FULL NAME', _user!.fullName),
-                              const Divider(color: Colors.white24, height: 32),
-                              _buildInfoRow('USERNAME', _user!.username),
-                              const Divider(color: Colors.white24, height: 32),
-                              _buildInfoRow('EMAIL', _user!.email),
-                              const Divider(color: Colors.white24, height: 32),
-                              _buildInfoRow('PHONE', _user!.phone),
-                            ],
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 24),
+                    Center(
+                      child: Text(
+                        _user!.fullName.toUpperCase(),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    const Text(
+                      'ACCOUNT INFORMATION',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white24, width: 1),
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white.withOpacity(0.02),
+                      ),
+                      child: Column(
+                        children: [
+                          _buildInfoRow('FULL NAME', _user!.fullName),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildInfoRow('USERNAME', _user!.username),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildInfoRow('EMAIL', _user!.email),
+                          const Divider(color: Colors.white24, height: 32),
+                          _buildInfoRow('PHONE', _user!.phone),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+            ),
     );
   }
 
