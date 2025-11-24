@@ -134,12 +134,14 @@ class _EditPurchasePageState extends State<EditPurchasePage> {
                         height: 80,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white24, width: 1),
+                          borderRadius: BorderRadius.circular(8),
                           color: Colors.white.withOpacity(0.05),
                         ),
-                        child: Center(
-                          child: Text(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
                             widget.transaction.filmPoster,
-                            style: const TextStyle(fontSize: 40),
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

@@ -65,11 +65,9 @@ class FilmListPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.white.withOpacity(0.05),
                           ),
-                          child: Center(
-                            child: Text(
-                              film.poster,
-                              style: const TextStyle(fontSize: 40),
-                            ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(film.poster, fit: BoxFit.cover),
                           ),
                         ),
                         const SizedBox(width: 16),

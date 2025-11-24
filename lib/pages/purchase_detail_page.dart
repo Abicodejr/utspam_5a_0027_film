@@ -179,12 +179,14 @@ class _PurchaseDetailPageState extends State<PurchaseDetailPage> {
                                 color: Colors.white24,
                                 width: 1,
                               ),
+                              borderRadius: BorderRadius.circular(8),
                               color: Colors.white.withOpacity(0.05),
                             ),
-                            child: Center(
-                              child: Text(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
                                 _transaction!.filmPoster,
-                                style: const TextStyle(fontSize: 60),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
